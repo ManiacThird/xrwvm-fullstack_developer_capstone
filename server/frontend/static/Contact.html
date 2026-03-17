@@ -2,39 +2,40 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Contact Us</title>
+  <title>Contact Us - Dealerships</title>
+  <link rel="stylesheet" href="/static/bootstrap.min.css">
+  <link rel="stylesheet" href="/static/style.css">
   <style>
     body {
       font-family: Arial, sans-serif;
       background: #f5f5f5;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
     }
-
+    .contact-header {
+      text-align: center;
+      margin: 30px 0;
+    }
     .contact-container {
       background: white;
       padding: 30px;
       border-radius: 10px;
-      width: 400px;
+      max-width: 600px;
+      margin: auto;
       box-shadow: 0 4px 10px rgba(0,0,0,0.1);
     }
-
-    h2 {
+    .contact-info {
+      margin-top: 30px;
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+    .contact-info div {
       text-align: center;
-      margin-bottom: 20px;
     }
-
-    input, textarea {
-      width: 100%;
-      padding: 10px;
-      margin-top: 8px;
-      margin-bottom: 15px;
-      border-radius: 5px;
-      border: 1px solid #ccc;
+    .contact-info img {
+      width: 150px;
+      border-radius: 10px;
     }
-
     button {
       width: 100%;
       padding: 12px;
@@ -45,18 +46,44 @@
       font-size: 16px;
       cursor: pointer;
     }
-
     button:hover {
       background: #0056b3;
     }
   </style>
 </head>
-
 <body>
 
-<div class="contact-container">
-  <h2>Contact Us</h2>
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-light" style="background-color:darkturquoise; height: 1in;">
+  <div class="container-fluid">
+    <h2 style="padding-right: 5%;">Dealerships</h2>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarText">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link" style="font-size: larger;" aria-current="page" href="/">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" style="font-size: larger;" href="/about">About Us</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" style="font-size: larger;" href="/contact">Contact Us</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
 
+<!-- Header -->
+<div class="contact-header">
+  <h2>Contact Us</h2>
+  <p>Have questions or need more information? Reach out to us!</p>
+</div>
+
+<!-- Form -->
+<div class="contact-container">
   <form action="/send-message" method="POST">
 
     <label for="name">Full Name</label>
@@ -72,9 +99,23 @@
     <textarea id="message" name="message" rows="5" required></textarea>
 
     <button type="submit">Send Message</button>
-
   </form>
 </div>
 
+<!-- Contact Info / Images -->
+<div class="contact-info">
+  <div>
+    <img src="/static/cars.jpeg" alt="Cars">
+    <p>Our Dealership Location</p>
+    <p>123 Main St, YourCity</p>
+  </div>
+  <div>
+    <img src="/static/contactus.png" alt="Contact Us">
+    <p>Call us: +1 234 567 890</p>
+    <p>Email: info@dealership.com</p>
+  </div>
+</div>
+
+<script src="/static/bootstrap.bundle.min.js"></script>
 </body>
 </html>
